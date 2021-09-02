@@ -67,14 +67,14 @@ for x in gradebookFiles:
     os.remove(x)
 
 gradebookZip.close()
-browser.close()
+browser.quit()
 
 # Email bit
 msg = MIMEMultipart()
 body_part = MIMEText('Hi both,\n\nHere are the latest gradebook exports, downloaded at %s on %s.\n\nThanks,' % (t, d), 'plain')
 msg['Subject'] = '%s %s : Latest Gradebook Export' % (d, t)
 msg['From'] = emailAddress
-recipients = ['a.lowe@sae.edu','eb.hill@sae.edu','d.ashman@sae.edu']
+recipients = ['a.lowe@sae.edu','d.ashman@sae.edu', 'eb.hill@sae.edu']
 msg['To'] = ", ".join(recipients)
 msg.attach(body_part)
 
@@ -86,7 +86,7 @@ try:
     with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
         smtp.login(emailAddress, emailPassword)
         smtp.send_message(msg)
-except Exception as error: 
+except Exception as error:
     logevent.logEvent.failLog(error)
     browser.quit()
 
