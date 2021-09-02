@@ -10,6 +10,9 @@ from email.mime.text import MIMEText
 from datetime import datetime
 import logevent
 
+# Sets the default directory for the batch file.
+dir = os.chdir(r'C:\Users\adam_\Documents\GitHub\Navitas\gradebook-email')
+
 # Datetime for email subject
 date = datetime.now()
 d = date.strftime('%d/%m/%Y')
@@ -71,7 +74,7 @@ browser.quit()
 
 # Email bit
 msg = MIMEMultipart()
-body_part = MIMEText('Hi both,\n\nHere are the latest gradebook exports, downloaded at %s on %s.\n\nThanks,' % (t, d), 'plain')
+body_part = MIMEText('Hi both,\n\nPlease note this is an automated message.\n\nHere are the latest gradebook exports, downloaded at %s on %s.\n\nThanks,' % (t, d), 'plain')
 msg['Subject'] = '%s %s : Latest Gradebook Export' % (d, t)
 msg['From'] = emailAddress
 recipients = ['a.lowe@sae.edu','d.ashman@sae.edu', 'eb.hill@sae.edu']
