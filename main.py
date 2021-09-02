@@ -4,6 +4,7 @@ import zipfile
 import glob
 import os
 import time
+import sys
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 from email.mime.text import MIMEText
@@ -60,6 +61,7 @@ try:
 except Exception as error: 
     logevent.logEvent.failLog(error)
     browser.quit()
+    sys.exit()
 
 time.sleep(10) # Allow time for all the files to download
 
@@ -91,6 +93,7 @@ try:
         smtp.send_message(msg)
 except Exception as error:
     logevent.logEvent.failLog(error)
-    browser.quit()
+    sys.exit()
 
 logevent.logEvent.successLog()
+sys.exit()
