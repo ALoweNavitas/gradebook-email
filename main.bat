@@ -1,0 +1,1 @@
+"C:\Users\adam_\anaconda3\python.exe" "C:\Users\adam_\Documents\GitHub\Navitas\gradebook-email\main.py"

@@ -25,6 +25,7 @@ NAV_USER = os.environ.get('NAV_USER')
 NAV_PASS = os.environ.get('NAV_PASS')
 emailAddress = os.environ.get('EMAIL_USER')
 emailPassword = os.environ.get('EMAIL_PASS')
+chromedriverPath = os.environ.get('chromedriverPath')
 
 try:
     os.remove('gradebookExports.zip')
@@ -39,8 +40,7 @@ prefs = {'download.default_directory' : r'C:\Users\adam_\Documents\GitHub\Navita
 chrome_options.add_experimental_option('prefs', prefs)
 chrome_options.add_argument("--window-size=1920, 1080")
 chrome_options.add_argument("--headless")
-path = r'C:\Users\adam_\Documents\GitHub\Navitas\gradebook-email\chromedriver.exe'
-browser = webdriver.Chrome(path, options=chrome_options)
+browser = webdriver.Chrome(chromedriverPath, options=chrome_options)
 
 # Create Zip
 gradebookZip = zipfile.ZipFile('gradebookExports.zip', 'w') # Creates a zip
