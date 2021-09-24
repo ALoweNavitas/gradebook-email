@@ -12,7 +12,8 @@ from datetime import datetime
 import logevent
 
 # Sets the default directory for the batch file.
-dir = os.chdir(r'C:\Users\adam_\Documents\GitHub\Navitas\gradebook-email')
+os.chdir(os.getcwd())
+dir = os.getcwd()
 
 # Datetime for email subject
 date = datetime.now()
@@ -36,7 +37,7 @@ except:
 
 # Call the web browser
 chrome_options = webdriver.ChromeOptions()
-prefs = {'download.default_directory' : r'C:\Users\adam_\Documents\GitHub\Navitas\gradebook-email'} # Changes the download directory
+prefs = {'download.default_directory' : str(dir)} # Changes the download directory
 chrome_options.add_experimental_option('prefs', prefs)
 chrome_options.add_argument("--window-size=1920, 1080")
 chrome_options.add_argument("--headless")
@@ -79,7 +80,7 @@ msg = MIMEMultipart()
 body_part = MIMEText('Hi both,\n\nPlease note this is an automated message.\n\nHere are the latest gradebook exports, downloaded at %s on %s.\n\nThanks,' % (t, d), 'plain')
 msg['Subject'] = '%s %s : Latest Gradebook Export' % (d, t)
 msg['From'] = emailAddress
-recipients = ['a.lowe@sae.edu','d.ashman@sae.edu', 'eb.hill@sae.edu']
+recipients = ['enter email', 'enter email']
 msg['To'] = ", ".join(recipients)
 msg.attach(body_part)
 

@@ -23,3 +23,9 @@
 21 09 2021 : Script took 113.83 seconds to finish and completed at 07:18:03
 21 09 2021 : Script took 83.85 seconds to finish and completed at 16:00:04
 22 09 2021 : Script took 58.36 seconds to finish and completed at 10:25:34
+22 09 2021 : Script took 91.16 seconds to finish and completed at 16:00:06
+23 09 2021 : Script took 61.92 seconds to finish and completed at 09:00:03
+23 09 2021 : Script took 99.13 seconds to finish and completed at 16:00:02
+24 09 2021 : Script took 68.98 seconds to finish and completed at 09:11:17
+24 09 2021 : Script took 64.21 seconds to finish and completed at 15:42:53
+24 09 2021 : Script took 63.64 seconds to finish and completed at 15:44:22
